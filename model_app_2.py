@@ -126,7 +126,7 @@ causa_externa_map = {1:"Accidente de trabajo", 2:"Accidente de tránsito", 3:"Ac
                      12:"Sospecha de maltrato emocional", 13:"Enfermedad general", 14:"Enfermedad laboral", 15: "Otra"}
 
 # Cargar el modelo
-with open("lgb_model_early_stop_2.pkl", "rb") as file:
+with open("/home/ubuntu/TFM2025VIU/lgb_model_early_stop_2.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Título de la aplicación

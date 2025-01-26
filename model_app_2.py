@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import datetime
 import pandas as pd
 import pickle
+import os
 
 # Mapeos para las EPS
 eps_dict = {1: 'AIC EPSIC', 3: 'ALIANSALUD', 4: 'ALIANSALUD EPS S.A', 5: 'AMBUQ CONTRIBUTIVO', 6: 'AMBUQ ESS', 7: 'ANAS WAYUU EPSI', 
@@ -130,8 +131,15 @@ causa_externa_map = {1:"Accidente de trabajo", 2:"Accidente de tránsito", 3:"Ac
 #     model = pickle.load(file)
 
 # Obtener la ruta absoluta del archivo del modelo
-current_dir = os.path.dirname(os.path.abspath(__file__))
+# Obtener el directorio donde se está ejecutando el script
+current_dir = os.getcwd()
+
+# Construir la ruta completa al archivo del modelo
 model_path = os.path.join(current_dir, "lgb_model_early_stop_2.pkl")
+
+# Verificar que el archivo existe
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"No se encontró el archivo del modelo en: {model_path}")
 
 # Cargar el modelo
 with open(model_path, "rb") as file:

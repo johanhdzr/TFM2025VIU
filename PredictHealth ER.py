@@ -126,24 +126,13 @@ causa_externa_map = {1:"Accidente de trabajo", 2:"Accidente de tránsito", 3:"Ac
                      9:"Sospecha de maltrato físico", 10:"Sospecha de abuso sexual", 11:"Sospecha de violencia sexual",
                      12:"Sospecha de maltrato emocional", 13:"Enfermedad general", 14:"Enfermedad laboral", 15: "Otra"}
 
+# Cargar el modelo
+with open("lgb_model_early_stop_2.pkl", "rb") as file:
+    model = pickle.load(file)
+
 # # Cargar el modelo
 # with open("/home/ubuntu/TFM2025VIU/lgb_model_early_stop_2.pkl", "rb") as file:
 #     model = pickle.load(file)
-
-# Obtener la ruta absoluta del archivo del modelo
-# Obtener el directorio donde se está ejecutando el script
-current_dir = os.getcwd()
-
-# Construir la ruta completa al archivo del modelo
-model_path = os.path.join(current_dir, "lgb_model_early_stop_2.pkl")
-
-# Verificar que el archivo existe
-if not os.path.exists(model_path):
-    raise FileNotFoundError(f"No se encontró el archivo del modelo en: {model_path}")
-
-# Cargar el modelo
-with open(model_path, "rb") as file:
-    model = pickle.load(file)
 
 # Título de la aplicación
 st.title("Predicción Destino del Paciente en Urgencias")

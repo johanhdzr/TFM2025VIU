@@ -642,7 +642,7 @@ with bot1:
 
 
             # Mostrar el resultado
-            st.success(f"El paciente {nombre_paciente} {apellido} tiene una alta probabilidad de ser: {prediction}")
+            st.success(f"{nombre_paciente} {apellido} tiene una alta probabilidad de ser: {prediction}")
 
         except Exception as e:
             st.error(f"Hubo un error al procesar los datos: {e}")

@@ -125,8 +125,16 @@ causa_externa_map = {1:"Accidente de trabajo", 2:"Accidente de tránsito", 3:"Ac
                      9:"Sospecha de maltrato físico", 10:"Sospecha de abuso sexual", 11:"Sospecha de violencia sexual",
                      12:"Sospecha de maltrato emocional", 13:"Enfermedad general", 14:"Enfermedad laboral", 15: "Otra"}
 
+# # Cargar el modelo
+# with open("/home/ubuntu/TFM2025VIU/lgb_model_early_stop_2.pkl", "rb") as file:
+#     model = pickle.load(file)
+
+# Obtener la ruta absoluta del archivo del modelo
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, "lgb_model_early_stop_2.pkl")
+
 # Cargar el modelo
-with open("/home/ubuntu/TFM2025VIU/lgb_model_early_stop_2.pkl", "rb") as file:
+with open(model_path, "rb") as file:
     model = pickle.load(file)
 
 # Título de la aplicación

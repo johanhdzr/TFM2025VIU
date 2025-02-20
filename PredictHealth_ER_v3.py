@@ -39,7 +39,7 @@ causa_externa_map = {"Accidente de trabajo":0, "Accidente de tránsito":0, "Acci
 #     model = pickle.load(file)
 
 # Cargar el modelo
-with open("C:/Users/Johan/Documents/entornos_python/.Estandar2024/TFM/best_xgb_18_02-2.pkl", "rb") as file:
+with open("best_xgb_18_02-2.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Crear dos columnas para organizar el logo y el título
@@ -47,7 +47,7 @@ t1, t2 = st.columns([1, 5])  # Ajusta la proporción según sea necesario
 
 # Coloca la imagen en la columna de la derecha
 with t1:
-    st.image("C:/Users/Johan/Documents/entornos_python/.Estandar2024/TFM/logo.png", width=120)
+    st.image("logo.png", width=120)
 
 # Coloca el título en la columna de la izquierda
 with t2:
